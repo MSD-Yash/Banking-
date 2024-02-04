@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <script src="https://kit.fontawesome.com/e0e02f3ff6.js" crossorigin="anonymous"></script>
+    <style>
+   
+        body{
+            background-image: url("image/transfer.jpg");
+            background-size: cover;
+        }
+.container{
+    padding: 70px;
+    font-size: 20px;
+    color: antiquewhite;
+    position: absolute;
+    left: 45%;
+    top: 30%;
+    backdrop-filter:blur(2px);
+    border: solid 2px white;
+    border-radius: 30px;
+    background: none;
+}
+.btn{
+    padding: 5px;
+    color: black;
+    position: absolute;
+    top: 80%;
+    left: 45%;
+    border: solid 2px sandybrown;
+    border-radius: 20px;
+    background-image: none;
+}
+
+
+
+
+    </style>
+    
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="post" action="transfer.jsp">
+    <div class="container">
+        <h1>transfer the money </h1>
+        <table>
+            <tr>
+                <td>ACCOUNT NUM</td>
+                <td>
+    <input type="number" name="anm" required autocomplete="off" placeholder="enter the account number">
+</td>
+<TR><td>
+    ENTER THE UPI PIN
+</td>
+    <td>
+    <input type="password" name="psw" required autocomplete="off" placeholder="enter the pin">
+</td>
+<tr>
+    <td>Enter the amount</td>
+    <td>
+    <input type="number" name="amt" placeholder="enter the amount">
+</td>
+    <button class="btn">
+        transfer
+    </button>
+</table>
+    </div>
+    </form>
+   
+
+</body>
+</html>

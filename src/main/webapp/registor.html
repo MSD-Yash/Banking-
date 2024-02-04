@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+    function test()
+    {
+      no=document.frm.ano.value;
+      document.getElementById("info").innerHTML="Account Number : "+no;
+      }
+      
+    function createRequestObject() {
+        var tmpXmlHttpObject;
+        if (window.XMLHttpRequest) {
+                tmpXmlHttpObject = new XMLHttpRequest();
+        } else if (window.ActiveXObject) {
+            tmpXmlHttpObject = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+    
+        return tmpXmlHttpObject;
+    }
+    
+    
+    var http = createRequestObject();
+    
+    function makeGetRequest() {
+        no=document.new.userid.value;
+        http.open('get', 'checkid.jsp?userid=' + no);
+        http.onreadystatechange = processResponse;
+        http.send(null);
+    }
+    
+    function processResponse() {
+        if(http.readyState == 4){
+            var response = http.responseText;
+            document.getElementById('res').innerHTML = response;
+        }
+    }
+    
+    
+      
+      
+    </script>
+  
+</head>
+<style>
+    body{
+        
+         background: url("image/pexels-ann-h-1762851.jpg") no-repeat center center fixed;
+    background-size: cover;
+    }
+    .contener{
+		font-size: 30px;
+        position: absolute;
+        top: 20%;
+        left: 60%;
+        filter: blur();
+        background: none;
+       
+    }
+    .CONT{
+		position: absolute;
+		bottom: 10;
+		right: 60%;
+	}
+	
+	
+	.btn{
+		position: absolute;
+		top: 60%;
+		left: 70%;
+		border-radius: 15px;
+		background: none;
+		font-size: 20px;
+	}
+
+</style>
+<body><div class="ab">
+    <form name="new" action="RegisterUser" method="post">
+
+<table class="contener">
+    <tr>
+        <td>userid</td>
+        <td><input type="text" name="uid" required autocomplete="off" class="control-form" placeholder="Enter your user id"></td>
+    <trd><div id="res"></div></trd>
+    </tr>
+    <tr>
+        <td>password</td>
+        <td><input type"password" name="psw" onfocus="makeGetRequest()" required autocomplete="off" class="control-form" placeholder="enter password"></td>
+ <td></td>   
+    </tr>
+    <tr>
+        <td>account number</td>
+        <td><input type="number" name="acno" required autocomplete="off" class="control-form" placeholder="enter account no."></td>
+    </tr>
+    <tr>
+        <td>Username</td>
+        <td><input type="text" name="nm" required autocomplete="off" class="control-form" placeholder="enter name"></td>
+    </tr>
+    <tr>
+        <td>gender</td>
+        <td><input type="radio" name="gen" value="MALE" checked>MALE
+            <input type="radio" name="gen" value="FEMALE">FEMALE
+        </td>
+
+    </tr>
+    <tr>
+        <td>age</td>
+        <td><input type="number" name="age" required autocomplete="off" class="control-form" placeholder="enter age"></td>
+    </tr>
+    <tr>
+        <td>mobile no</td>
+        <td><input type="number" name="mob" required autocomplete="off" class="control-form" placeholder="entr mobile no."></td>
+    </tr>
+    <tr>
+         <button class="btn">SUBMIT
+       
+    </button>
+    
+    </tr>
+    
+    
+    
+    
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+    </form>
+
+
+</div>
+</body>
+</html>
